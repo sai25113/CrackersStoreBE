@@ -48,9 +48,13 @@ app.use(
 				callback(new Error("Not allowed by CORS"));
 			}
 		},
-		credentials: true,
+		methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+		allowedHeaders: ["Content-Type", "Authorization"],
+		credentials: true, // ✅ allow cookies across domains
 	}),
 );
+// app.options("*", cors());
+
 console.log("Loaded CORS_ORIGIN:", process.env.CORS_ORIGIN);
 
 app.use((err, req, res, next) => {
@@ -58,7 +62,7 @@ app.use((err, req, res, next) => {
 	res.status(500).json({ error: err.message });
 });
 
-// app.options("*", cors());
+// // ✅ Preflight support (important for complex requests)
 
 app.get("/", (req, res) => {
 	res.send("Hello World");
