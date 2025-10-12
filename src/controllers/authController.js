@@ -95,6 +95,7 @@ const login = asyncHandler(async (req, res) => {
 	const options = {
 		httpOnly: true,
 		secure: true,
+		sameSite: "none", // ✅ critical for cross-site cookies
 	};
 
 	return res
@@ -129,6 +130,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 	const options = {
 		httpOnly: true,
 		secure: true,
+		sameSite: "none", // ✅ critical for cross-site cookies
 	};
 	return res
 		.status(200)
