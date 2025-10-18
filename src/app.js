@@ -8,6 +8,7 @@ import authRouter from "./routes/authRoutes.js";
 import cookieParser from "cookie-parser";
 import stockRoutes from "./routes/stockRoutes.js";
 import saleRoutes from "./routes/saleRoutes.js";
+import rewardRoutes from "./routes/rewardRoutes.js";
 
 const app = express();
 
@@ -80,6 +81,8 @@ console.log("✅ auth route loaded");
 
 app.use("/api/v1/stocks", stockRoutes);
 app.use("/api/v1/sales", saleRoutes);
+
+app.use("/api/v1/rewards", rewardRoutes);
 
 export default app;
 

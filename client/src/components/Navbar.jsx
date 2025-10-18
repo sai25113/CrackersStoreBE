@@ -168,6 +168,30 @@ const Navbar = () => {
 						</Nav.Link>
 
 						<Nav.Link
+							onClick={() => handleNavigation("/spin-wheel")}
+							className={`d-flex align-items-center mx-2 ${
+								isActive("/spin-wheel")
+									? "active text-primary fw-semibold"
+									: "text-dark"
+							}`}
+						>
+							<Sparkles size={18} className="me-2 text-warning" />
+							Spin & Win
+						</Nav.Link>
+
+						<Nav.Link
+							onClick={() => handleNavigation("/admin-wheel")}
+							className={`d-flex align-items-center mx-2 ${
+								isActive("/admin-wheel")
+									? "active text-primary fw-semibold"
+									: "text-dark"
+							}`}
+						>
+							<Sparkles size={18} className="me-2 text-warning" />
+							Edit Spin & Win
+						</Nav.Link>
+
+						<Nav.Link
 							onClick={() => handleNavigation("/sales")}
 							className={`d-flex align-items-center mx-2 ${
 								isActive("/sales")

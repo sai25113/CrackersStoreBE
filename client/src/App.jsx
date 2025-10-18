@@ -58,7 +58,8 @@ import { store } from "./app/store";
 import StockDashboard from "./features/stocks/StockDashboard";
 import SalesPage from "./features/sales/SalesPage";
 import SalesHistoryPage from "./features/sales/SalesHistoryPage";
-
+import SpinWheel from "./features/spinWheel/spinWheel";
+import AdminRewards from "./features/spinWheel/AdminRewards";
 import Navbar from "./components/Navbar";
 
 // ✅ Put all routing + useLocation logic here
@@ -82,6 +83,8 @@ function AppContent() {
 				<Route path="/dashboard" element={<StockDashboard />} />
 				<Route path="/sales" element={<SalesPage />} />
 				<Route path="/sales-history" element={<SalesHistoryPage />} />
+				<Route path="/spin-wheel" element={<SpinWheel />} />
+				<Route path="/admin-wheel" element={<AdminRewards />} />
 			</Routes>
 		</>
 	);
