@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import stockRoutes from "./routes/stockRoutes.js";
 import saleRoutes from "./routes/saleRoutes.js";
 import rewardRoutes from "./routes/rewardRoutes.js";
+import spinRoutes from "./routes/spinRoutes.js";
 
 const app = express();
 
@@ -83,6 +84,7 @@ app.use("/api/v1/stocks", stockRoutes);
 app.use("/api/v1/sales", saleRoutes);
 
 app.use("/api/v1/rewards", rewardRoutes);
+app.use("/api/v1/", spinRoutes);
 
 export default app;
 
